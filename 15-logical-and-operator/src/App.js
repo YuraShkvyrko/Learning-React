@@ -10,12 +10,25 @@ function App() {
     setCount(count + 1)
   }
 
+  const resetCount = () => {
+    setCount(0)
+  }
+
+  const buttonStyle = {backgroundColor: 'lightgreen'}
+
   return (
     <div className="App">
       <Counter countText={count}/>
       <Button onClick={incrementCount}/>
       <Button onClick={incrementCount}/>
       <Button onClick={incrementCount}/>
+      {/*{!!count && (*/}
+      {count > 0 && (
+        <div>
+          <button style={buttonStyle} onClick={resetCount}>Reset</button>
+        </div>
+      )}
+
     </div>
   )
 }
